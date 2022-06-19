@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Lato";
+  color: #ecf3fe;
+}
+
+body {
+  background-color: #2f89ff;
+}
+
+nav {
+  padding: 1rem;
+}
+
+nav li {
+  display: inline-block;
+}
+
+nav a {
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 5px;
+  padding: 0.2rem;
+}
+
+nav a:hover {
+  background-color: #ecf3fe;
+  color: #2f89ff;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.hira-display {
+  background-color: #ecf3fe;
+  text-align: center;
+  margin: auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 1rem;
+  border-radius: 15px;
+  font-size: 10rem;
+}
+
+.hira-display p {
+  color: black;
+}
+
+.stats-display {
+  text-align: center;
+  padding: 1rem;
+}
+
+.stats-display p {
+  display: inline;
+  padding: 1rem;
+}
+
+.entry-area {
+  text-align: center;
+  margin-top: 5rem;
+}
+
+.entry-area input {
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem;
+  color: black;
+}
+
+.entry-area button {
+  border: none;
+  padding: 0.5rem;
+  border-radius: 5px;
+  background-color: #ecf3fe;
+  color: black;
+}
+
+.entry-area button:hover {
+  background-color: #bcd4fb;
+}
+
+.entry-area button:active {
+  background-color: black;
+}
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+$main-color: #2f89ff;
+$secondary-color: #ecf3fe;
+
+* {
+  margin: 0;
+  padding: 0;
+
+  font-family: "Lato";
+  color: $secondary-color;
+}
+
+body {
+  background-color: $main-color;
+}
+
+nav {
+  
+  padding: 1rem;
+  
+  li {
+    display: inline-block;
+  }
+
+  a {
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+    padding: 0.2rem;
+
+    &:hover {
+      background-color: $secondary-color;
+      color: $main-color;
+      transition: 0.5s;
+    }
+  }
+}
+
+.hira-display {
+  background-color: $secondary-color;
+  text-align: center;
+  margin: auto;
+  width: fit-content;
+  padding: 1rem;
+  border-radius: 15px;
+
+  font-size: 10rem;
+
+  p {
+    color: black;
+  }
+}
+
+.stats-display {
+  text-align: center;
+  padding: 1rem;
+
+  p {
+    display: inline;
+    padding: 1rem;
+  }
+}
+
+.entry-area {
+  text-align: center;
+  margin-top: 5rem;
+
+  input {
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem;
+    color: black;
+  }
+
+  button {
+    border: none;
+    padding: 0.5rem;
+    border-radius: 5px;
+    background-color: $secondary-color;
+    color: black;
+
+    &:hover {
+      background-color: darken($color: $secondary-color, $amount: 10);
+    }
+
+    &:active {
+      background-color: black;
+    }
+  }
+}
