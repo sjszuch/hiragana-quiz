@@ -85,4 +85,8 @@ nav a:hover {
 .entry-area button:active {
   background-color: black;
 }
+
+.results-screen {
+  text-align: center;
+}
 /*# sourceMappingURL=main.css.map */

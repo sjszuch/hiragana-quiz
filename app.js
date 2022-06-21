@@ -7,7 +7,16 @@ function rng() {
 function Character(english, japanese) {
     this.english = english;
     this.japanese = japanese;
+    this.difficulty = 0;
 }
+
+// A function called to create a new element on the page with the class name of "results-screen"
+function createEl(name, type, nameVal) {
+    name = document.createElement(type);
+    name.className = 'results-screen';
+    name.innerText = nameVal;
+    document.body.appendChild(name);
+   }
 
 // Every hiragana character object
 var hiragana = [
@@ -34,27 +43,40 @@ $('#answers-here').submit(function(e) {
     if ($('input[name="answer"]').val() === hiragana[currentChar].english) {
         correctCount++;
     } else {
+        hiragana[currentChar].difficulty++;
         wrongCount++;
     }
 
     update();
 });
 
-// When called, gets a new character and outputs it
+// When called, gets a new character and outputs it, and checks if the test is over
 function update() {
+    percentageScore = Math.round(correctCount / (correctCount + wrongCount) * 100);
+    $('#percent').html(percentageScore);
+
+    // If the test has reached the maximum amount of questions
+    if(correctCount+wrongCount === 10) {
+
+        // Hide the play area
+        $('#play-area').hide();
+
+        // Create a results header
+        createEl("results", "h1", "You got " + percentageScore + "% of characters correct.\nWrong Characters:");
+
+        // Show how many of each hiragana were missed
+        for (i=0; i<hiragana.length; i++) {
+            createEl("characterScore", "p", (hiragana[i].japanese + ": " + hiragana[i].difficulty));
+        }
+
+    }
+
+
+
     currentChar = rng();
     $('#hira-output').html(hiragana[currentChar].japanese);
     $('#correct-display').html("Correct: " + correctCount);
     $('#wrong-display').html("Wrong: " + wrongCount);
-
-    percentageScore = Math.round(correctCount / (correctCount + wrongCount) * 100);
-    $('#percent').html(percentageScore);
 }
 
 update();
-
-
-
-
-
-
