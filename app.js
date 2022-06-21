@@ -81,6 +81,7 @@ function update() {
 
     }
 
+    // Sets the current character to one thats category is equal to the course type
     do {
         currentChar = rng();
     } while (hiragana[currentChar].category !== sessionStorage.getItem("typeOfCourse"));
@@ -93,7 +94,8 @@ function update() {
     $('#wrong-display').html("Wrong: " + wrongCount);
 }
 
+// Sets the type of course that will be used on the gameplay page
 function setCourseType(type) {
-    window.location.href = "gameplay.html";
+    setTimeout(function() {document.location.href = "gameplay.html";}, 250);
     sessionStorage.setItem("typeOfCourse", type);
 }
