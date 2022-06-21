@@ -68,6 +68,7 @@ nav a:hover {
   border-radius: 5px;
   padding: 0.5rem;
   color: black;
+  font-size: 1.5rem;
 }
 
 .entry-area button {
@@ -76,6 +77,7 @@ nav a:hover {
   border-radius: 5px;
   background-color: #ecf3fe;
   color: black;
+  font-size: 1.5rem;
 }
 
 .entry-area button:hover {

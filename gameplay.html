@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <title>Document</title>
+  </head>
+  <body onload="update()">
+    <nav>
+      <ul>
+        <li><a href="index.html">jLearn</a></li>
+        <li><a href="">About</a></li>
+        <li><a href="">More</a></li>
+        <li><a href="">Contact</a></li>
+      </ul>
+    </nav>
+
+    <section id="play-area">
+      <div class="hira-display">
+        <p id="hira-output">か</p>
+      </div>
+
+      <div class="stats-display">
+        <p id="correct-display">Correct:</p>
+        <p id="wrong-display">Wrong:</p>
+        <p id="percent"></p>
+      </div>
+
+      <div class="entry-area">
+        <form id="answers-here" action="">
+          <input
+            type="text"
+            name="answer"
+            placeholder="..."
+            maxlength="3"
+            id="answerID"
+            required
+          />
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </section>
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
+    <script src="app.js"></script>
+  </body>
+</html>

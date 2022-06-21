@@ -1,7 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
-
-$main-color: #2f89ff;
-$secondary-color: #ecf3fe;
+@import '__variables.scss';
 
 * {
   margin: 0;
@@ -71,6 +69,7 @@ nav {
     border-radius: 5px;
     padding: 0.5rem;
     color: black;
+    font-size: 1.5rem;
   }
 
   button {
@@ -79,6 +78,7 @@ nav {
     border-radius: 5px;
     background-color: $secondary-color;
     color: black;
+    font-size: 1.5rem;
 
     &:hover {
       background-color: darken($color: $secondary-color, $amount: 10);

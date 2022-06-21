@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/course-page.css">
     <title>Document</title>
   </head>
   <body>
@@ -17,30 +18,36 @@
       </ul>
     </nav>
 
-    <section id="play-area">
-      <div class="hira-display">
-        <p id="hira-output">か</p>
+    <div class="course-type">
+        <h3>Hiragana Characters</h3>
+    </div>
+
+    <section class="course-area">
+      <div class="course-card">
+        <button class="label" onclick="setCourseType('basic')">あ</button>
+        <p>Basic</p>
       </div>
 
-      <div class="stats-display">
-        <p id="correct-display">Correct:</p>
-        <p id="wrong-display">Wrong:</p>
-        <p id="percent"></p>
+      <div class="course-card">
+        <button class="label" onclick="setCourseType('k')">か</button>
+        <p>K</p>
       </div>
 
-      <div class="entry-area">
-        <form id="answers-here" action="">
-          <input
-            type="text"
-            name="answer"
-            placeholder="..."
-            maxlength="3"
-            id="answerID"
-            required
-          />
-          <button type="submit">Submit</button>
-        </form>
+      <div class="course-card">
+        <p class="label" onclick="setCourseType('s')">さ</p>
+        <p>S</p>
       </div>
+    </section>
+
+    <div class="course-type">
+        <h3>Words</h3>
+    </div>
+
+    <section class="course-area">
+        <div class="course-card">
+            <p class="label">あ</p>
+            <p>Colors</p>
+          </div>
     </section>
 
     <script

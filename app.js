@@ -4,9 +4,10 @@ function rng() {
 }
 
 // Character constructor
-function Character(english, japanese) {
+function Character(english, japanese, category) {
     this.english = english;
     this.japanese = japanese;
+    this.category = category;
     this.difficulty = 0;
 }
 
@@ -20,15 +21,24 @@ function createEl(name, type, nameVal) {
 
 // Every hiragana character object
 var hiragana = [
-    a = new Character('a', 'あ'),
-    ka = new Character('ka', 'か'),
-    sa = new Character('sa', 'さ'),
-    ta = new Character('ta', 'た'),
-    na = new Character('na', 'な'),
-    i = new Character('i', 'い'),
-    ki = new Character('ki', 'き'),
-    shi = new Character('shi', 'し'),
-    chi = new Character('chi', 'ち')
+    a = new Character('a', 'あ', 'basic'),
+    i = new Character('i', 'い', 'basic'),
+    u = new Character('u', 'う', 'basic'),
+    e = new Character('e', 'え', 'basic'),
+    o = new Character('o', 'お', 'basic'),
+    n = new Character('n', 'ん', 'basic'),
+
+    ka = new Character('ka', 'か', 'k'),
+    ki = new Character('ki', 'き', 'k'),
+    ku = new Character('ku', 'く', 'k'),
+    ke = new Character('ke', 'け', 'k'),
+    ko = new Character('ko', 'こ', 'k'),
+
+    sa = new Character('sa', 'さ', 's'),
+    shi = new Character('shi', 'し', 's'),
+    su = new Character('su', 'す', 's'),
+    se = new Character('se', 'せ', 's'),
+    so = new Character('so', 'そ', 's')
 ];
 
 // The character currently displayed, the amount of correct answers, and amount of wrong answers
@@ -40,7 +50,7 @@ var wrongCount = 0;
 $('#answers-here').submit(function(e) {
     e.preventDefault();
     
-    if ($('input[name="answer"]').val() === hiragana[currentChar].english) {
+    if ($('input[name="answer"]').val().toLowerCase() === hiragana[currentChar].english) {
         correctCount++;
     } else {
         hiragana[currentChar].difficulty++;
@@ -71,12 +81,19 @@ function update() {
 
     }
 
+    do {
+        currentChar = rng();
+    } while (hiragana[currentChar].category !== sessionStorage.getItem("typeOfCourse"));
+        
 
 
-    currentChar = rng();
+
     $('#hira-output').html(hiragana[currentChar].japanese);
     $('#correct-display').html("Correct: " + correctCount);
     $('#wrong-display').html("Wrong: " + wrongCount);
 }
 
-update();
+function setCourseType(type) {
+    window.location.href = "gameplay.html";
+    sessionStorage.setItem("typeOfCourse", type);
+}
