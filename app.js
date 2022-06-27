@@ -72,12 +72,19 @@ function update() {
         $('#play-area').hide();
 
         // Create a results header
-        createEl("results", "h1", "You got " + percentageScore + "% of characters correct.\nWrong Characters:");
+        createEl("results", "h1", "You got " + percentageScore + "% of characters correct.");
 
         // Show how many of each hiragana were missed
-        for (i=0; i<hiragana.length; i++) {
-            createEl("characterScore", "p", (hiragana[i].japanese + ": " + hiragana[i].difficulty));
+        if(wrongCount > 0) {
+            createEl("results", "h1", "Wrong Characters: ");
+
+            for (i=0; i<hiragana.length; i++) {
+                if(hiragana[i].difficulty > 0) {
+                    createEl("characterScore", "p", (hiragana[i].japanese + ": " + hiragana[i].difficulty));
+                }
+            }
         }
+
 
     }
 
