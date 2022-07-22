@@ -1,39 +1,52 @@
-@import '__variables.scss';
+@import "__variables.scss";
 
 .course-type {
-    text-align: center;
-    background-color: darken($color: $main-color, $amount: 25);
-    color: $secondary-color;
-    padding: 1rem;
-    width: fit-content;
-    margin: auto;
-    border-radius: 15px;
+  text-align: center;
+  background-color: darken($color: $main-color, $amount: 25);
+  color: $secondary-color;
+  padding: 1rem;
+  width: fit-content;
+  margin: auto;
+  border-radius: 15px;
 }
 
 .course-area {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    padding: 1rem;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  padding: 1rem;
+  flex-wrap: wrap;
 }
 
 .course-card {
-    text-align: center;
+  text-align: center;
 
-    .label {
-        background-color: $secondary-color;
-        color: $main-color;
-        padding: 1rem;
-        font-size: 5rem;
-        border-radius: 15px;
-        border: none;
-        margin: auto;
+  .label {
+    height: 10rem;
+    width: 7rem;
 
-        &:hover {
-            cursor: pointer;
-            background-color: darken($color: $secondary-color, $amount: 75);
-            transition: .3s;
-        }
+    background-color: $secondary-color;
+    color: $main-color;
+
+    padding: 1rem;
+
+    font-size: 4rem;
+    font-weight: 600;
+
+    border-radius: 15px;
+    border: none;
+
+    &:hover {
+      cursor: pointer;
+      background-color: darken($color: $secondary-color, $amount: 75);
+      transition: 0.3s;
     }
+  }
 }
+
+i {
+  color: $main-color;
+}
+

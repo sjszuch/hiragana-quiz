@@ -17,16 +17,16 @@ function createEl(name, type, nameVal) {
     name.className = 'results-screen';
     name.innerText = nameVal;
     document.body.appendChild(name);
-   }
+}
 
 // Every hiragana character object
 var hiragana = [
-    a = new Character('a', 'あ', 'basic'),
-    i = new Character('i', 'い', 'basic'),
-    u = new Character('u', 'う', 'basic'),
-    e = new Character('e', 'え', 'basic'),
-    o = new Character('o', 'お', 'basic'),
-    n = new Character('n', 'ん', 'basic'),
+    a = new Character('a', 'あ', 'vowel'),
+    i = new Character('i', 'い', 'vowel'),
+    u = new Character('u', 'う', 'vowel'),
+    e = new Character('e', 'え', 'vowel'),
+    o = new Character('o', 'お', 'vowel'),
+    n = new Character('n', 'ん', 'vowel'),
 
     ka = new Character('ka', 'か', 'k'),
     ki = new Character('ki', 'き', 'k'),
@@ -47,9 +47,9 @@ var correctCount = 0;
 var wrongCount = 0;
 
 // Called when submitting the HTML answer form
-$('#answers-here').submit(function(e) {
+$('#answers-here').submit(function (e) {
     e.preventDefault();
-    
+
     if ($('input[name="answer"]').val().toLowerCase() === hiragana[currentChar].english) {
         correctCount++;
     } else {
@@ -63,10 +63,9 @@ $('#answers-here').submit(function(e) {
 // When called, gets a new character and outputs it, and checks if the test is over
 function update() {
     percentageScore = Math.round(correctCount / (correctCount + wrongCount) * 100);
-    $('#percent').html(percentageScore);
 
     // If the test has reached the maximum amount of questions
-    if(correctCount+wrongCount === 10) {
+    if (correctCount + wrongCount === 10) {
 
         // Hide the play area
         $('#play-area').hide();
@@ -75,11 +74,11 @@ function update() {
         createEl("results", "h1", "You got " + percentageScore + "% of characters correct.");
 
         // Show how many of each hiragana were missed
-        if(wrongCount > 0) {
+        if (wrongCount > 0) {
             createEl("results", "h1", "Wrong Characters: ");
 
-            for (i=0; i<hiragana.length; i++) {
-                if(hiragana[i].difficulty > 0) {
+            for (i = 0; i < hiragana.length; i++) {
+                if (hiragana[i].difficulty > 0) {
                     createEl("characterScore", "p", (hiragana[i].japanese + ": " + hiragana[i].difficulty));
                 }
             }
@@ -92,7 +91,7 @@ function update() {
     do {
         currentChar = rng();
     } while (hiragana[currentChar].category !== sessionStorage.getItem("typeOfCourse"));
-        
+
 
 
 
@@ -103,6 +102,14 @@ function update() {
 
 // Sets the type of course that will be used on the gameplay page
 function setCourseType(type) {
-    setTimeout(function() {document.location.href = "gameplay.html";}, 250);
+    setTimeout(function () {
+        document.location.href = "gameplay.html";
+    }, 250);
     sessionStorage.setItem("typeOfCourse", type);
+}
+
+// Opens a video or other link in new tab
+function openTab(url) {
+    window.open(
+        url, "_blank");
 }

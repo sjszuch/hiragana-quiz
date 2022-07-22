@@ -5,8 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/main.css" />
-    <link rel="stylesheet" href="styles/course-page.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="styles/course-page.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>jLearn: Learn Japanese</title>
   </head>
   <body>
     <nav>
@@ -18,14 +25,25 @@
       </ul>
     </nav>
 
+    <!--Section Title-->
     <div class="course-type">
-        <h3>Hiragana Characters</h3>
+      <h3>Hiragana Characters</h3>
     </div>
 
+    <!--Section for this course-->
     <section class="course-area">
+
+      <!--Vide Card: The Hiragana Alphabet-->
       <div class="course-card">
-        <button class="label" onclick="setCourseType('basic')">あ</button>
-        <p>Basic</p>
+        <button class="label" onclick="openTab('https://www.youtube.com/watch?v=Bsfi4XbPE8M')"><i class="fa-solid fa-video"></i></button
+              >
+      <p>The Alphabet</p>
+      </div>
+
+      <!--Course Card: Hiragana Vowels-->
+      <div class="course-card">
+        <button class="label" onclick="setCourseType('vowel')">あ</button>
+        <p>Vowels</p>
       </div>
 
       <div class="course-card">
@@ -34,20 +52,20 @@
       </div>
 
       <div class="course-card">
-        <p class="label" onclick="setCourseType('s')">さ</p>
+        <button class="label" onclick="setCourseType('s')">か</button>
         <p>S</p>
       </div>
     </section>
 
     <div class="course-type">
-        <h3>Words</h3>
+      <h3>Words</h3>
     </div>
 
     <section class="course-area">
-        <div class="course-card">
-            <p class="label">あ</p>
-            <p>Colors</p>
-          </div>
+      <div class="course-card">
+        <button class="label" onclick="setCourseType('k')">色</button>
+        <p>Colors</p>
+      </div>
     </section>
 
     <script
